@@ -30,22 +30,22 @@ fi
 #======================================================================================#
 
 #============================CREATE APP WAR============================================#
-echo "$(tput setaf 3)Preparing for making todo-app.war...$(tput sgr0)"
+echo "$(tput setaf 3)Preparing for making xmlanalyzer-0.1.war...$(tput sgr0)"
 mvn clean
-echo "$(tput setaf 3)Begin to make todo-app.war...$(tput sgr0)"
+echo "$(tput setaf 3)Begin to make xmlanalyzer-0.1.war...$(tput sgr0)"
 mvn install -Dmaven.test.skip=true
-echo "$(tput setaf 2)OK -todo-app.war has been made.$(tput sgr0)"
+echo "$(tput setaf 2)OK -xmlanalyzer-0.1.war has been made.$(tput sgr0)"
 #======================================================================================#
 
 #============================BUILD APP IMAGE===========================================#
-echo "$(tput setaf 3)Building todo-app image from Dockerfile...$(tput sgr0)"
+echo "$(tput setaf 3)Building xmlanalyzer image from Dockerfile...$(tput sgr0)"
 docker build -t ${APP_IMAGE_NAME} .
 echo "$(tput setaf 2)OK - image has been built.$(tput sgr0)"
 #======================================================================================#
 
 #============================RUN APP CONTAINER=========================================#
-echo "$(tput setaf 3)Building todo-app container...$(tput sgr0)"
+echo "$(tput setaf 3)Building xmlanalyzer container...$(tput sgr0)"
 docker run -p 8080:8080 --name ${APP_CONTAINER_NAME} -d ${APP_IMAGE_NAME}
-echo "$(tput setaf 2)OK - todo-app is up.$(tput sgr0)"
+echo "$(tput setaf 2)OK - xmlanalyzer is up.$(tput sgr0)"
 #======================================================================================#
 
