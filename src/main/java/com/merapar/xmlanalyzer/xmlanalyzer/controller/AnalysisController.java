@@ -18,9 +18,23 @@ public class AnalysisController {
     AnalysisService analysisService;
 
 
-    @PostMapping(path="/analyze", consumes = "application/json", produces = "application/json")
-    public @ResponseBody ResultAnalysis xmlAnalyze(@RequestBody AnalyzedUrl url) throws SAXException, ParserConfigurationException, IOException, ParseException {
-        return analysisService.doAnalysis(url.getUrl());
-    }
+    @PostMapping(path = "/analyze", consumes = "application/json", produces = "application/json")
+    public @ResponseBody
+    ResultAnalysis xmlAnalyze(@RequestBody AnalyzedUrl url) {
 
+        try {
+            return analysisService.doAnalysis(url.getUrl());
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+
+        return null;
+    }
 }

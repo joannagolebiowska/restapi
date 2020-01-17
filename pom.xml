@@ -10,7 +10,8 @@
     </parent>
     <groupId>com.merapar.xmlanalyzer</groupId>
     <artifactId>xmlanalyzer</artifactId>
-    <version>0.0.1</version>
+    <packaging>war</packaging>
+    <version>0.1</version>
     <name>xmlanalyzer</name>
     <description>Task project</description>
 
@@ -39,6 +40,11 @@
                     <artifactId>junit-vintage-engine</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
