@@ -1,0 +1,5 @@
+com\merapar\xmlanalyzer\xmlanalyzer\utils\FileFromUrlTest.class
+com\merapar\xmlanalyzer\xmlanalyzer\utils\DateFormatterTest.class
+com\merapar\xmlanalyzer\xmlanalyzer\controller\AnalysisControllerTest.class
+com\merapar\xmlanalyzer\xmlanalyzer\service\AnalysisServiceTest.class
+com\merapar\xmlanalyzer\xmlanalyzer\XmlanalyzerApplicationTests.class

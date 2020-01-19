@@ -5,17 +5,24 @@ import com.merapar.xmlanalyzer.xmlanalyzer.model.AnalyzedUrl;
 import com.merapar.xmlanalyzer.xmlanalyzer.model.ResultAnalysis;
 import com.merapar.xmlanalyzer.xmlanalyzer.service.AnalysisService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.xml.sax.SAXException;
+
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.text.ParseException;
 
 @RestController
 public class AnalysisController {
 
+    private AnalysisService analysisService;
+
     @Autowired
-    AnalysisService analysisService;
+    public AnalysisController(AnalysisService analysisService) {
+        this.analysisService = analysisService;
+    }
 
 
     @PostMapping(path = "/analyze", consumes = "application/json", produces = "application/json")
@@ -24,16 +31,13 @@ public class AnalysisController {
 
         try {
             return analysisService.doAnalysis(url.getUrl());
-        } catch (IOException e) {
-            e.printStackTrace();
         } catch (SAXException e) {
             e.printStackTrace();
         } catch (ParserConfigurationException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         return null;
     }

@@ -11,7 +11,7 @@ public class IOExceptionHandler {
 
 
     @ExceptionHandler(IOException.class)
-    public String globalExceptionHandle(Exception ex){
+    public String ioExceptionHandle(Exception ex){
        return ex.getMessage();
     }
 }

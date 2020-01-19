@@ -1,0 +1,9 @@
+com\merapar\xmlanalyzer\xmlanalyzer\service\AnalysisService.class
+com\merapar\xmlanalyzer\xmlanalyzer\utils\FileFromUrl.class
+com\merapar\xmlanalyzer\xmlanalyzer\controller\AnalysisController.class
+com\merapar\xmlanalyzer\xmlanalyzer\model\Details.class
+com\merapar\xmlanalyzer\xmlanalyzer\model\AnalyzedUrl.class
+com\merapar\xmlanalyzer\xmlanalyzer\model\ResultAnalysis.class
+com\merapar\xmlanalyzer\xmlanalyzer\utils\DateFormatter.class
+com\merapar\xmlanalyzer\xmlanalyzer\XmlanalyzerApplication.class
+com\merapar\xmlanalyzer\xmlanalyzer\exception\IOExceptionHandler.class
