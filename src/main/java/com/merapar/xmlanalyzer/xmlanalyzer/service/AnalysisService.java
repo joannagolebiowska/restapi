@@ -42,19 +42,16 @@ public class AnalysisService {
 
         File xmlFile = fileFromUrl.getFileFromUrl(urlString);
         NodeList nodeList = getNodeList(xmlFile);
-        if(nodeList.getLength()!=0) {
-            Node node = nodeList.item(0);
-            setFirstAndLastPostDate(node);
+        Node node = nodeList.item(0);
+        setFirstAndLastPostDate(node);
 
-            for (int temp = 0; temp < nodeList.getLength(); temp++) {
-                node = nodeList.item(temp);
-                setAttributesFromElements(node);
-            }
-            setValuesToObjects(nodeList);
-
-            return resultAnalysis;
+        for (int temp = 0; temp < nodeList.getLength(); temp++) {
+            node = nodeList.item(temp);
+            setAttributesFromElements(node);
         }
-        return null;
+        setValuesToObjects(nodeList);
+
+        return resultAnalysis;
     }
 
     private void setValuesToObjects(NodeList nodeList) {
@@ -71,7 +68,6 @@ public class AnalysisService {
     private void setAttributesFromElements(Node node) {
         if (node.getNodeType() == Node.ELEMENT_NODE) {
             Element eElement = (Element) node;
-
             try {
                 if (DateFormatter.getDateWithTimeZone(eElement.getAttribute("CreationDate")).before(details.getFirstPost())) {
                     details.setFirstPost(DateFormatter.getDateWithTimeZone(eElement.getAttribute("CreationDate")));
