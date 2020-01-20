@@ -30,7 +30,6 @@ import java.io.IOException;
             Assert.assertEquals(expectedCorrectFileNameInReturn, returnFileName);
         }
 
-        //czy nie usunąć?
         @Test(expected= IOException.class)
         public void whenUrlIsInvalid_thenExceptionSatisfied(){
             String invalidUrlString = "http://s3-eu-west-1.amazonaws.com/merapar-assessment/araic-posts.xml";
